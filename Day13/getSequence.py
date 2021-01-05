@@ -13,14 +13,12 @@ indexes = [i - indexes[buses.index(max(buses))] for i in indexes]
 print(indexes)
 print("Shifting index 0 to max bus ID", max(buses), "which is at index", buses.index(max(buses)), "and will now be index 0")
 departures = [False] * len(buses)
-t = 100000000000000
-#t = 0
+
+t = 0
 while not all(departures):
+    # if t == 100000000000000:
+    #     print("Made it")
     for idx, bus in enumerate(buses):
-        # if bus == 'x':
-        #    departures[index] = True
-        #    continue
-        # elif (t + index) % int(bus) == 0:
         if (t + indexes[idx]) % bus == 0:
             departures[idx] = True
             continue
