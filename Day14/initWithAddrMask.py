@@ -24,7 +24,7 @@ def runMask(address, mask): #take int address in
             output_addrs[index][idx] = overwrite[index] #write the output bit to each output address
     return [int(''.join(addr), 2) for addr in output_addrs]
 
-with open('testData2') as input_data:
+with open('data') as input_data:
     instructions = input_data.readlines()
 
 memory = {}#[0] * 65536
@@ -39,4 +39,4 @@ for instruction in instructions:
             memory[addr] = int(instruction[stop+4:])
 
 #print(memory[0:30])
-print("The sum of all memory values is", sum(memory))
+print("The sum of all memory values is", sum(memory.values()))
