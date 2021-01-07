@@ -24,10 +24,10 @@ def runMask(address, mask): #take int address in
             output_addrs[index][idx] = overwrite[index] #write the output bit to each output address
     return [int(''.join(addr), 2) for addr in output_addrs]
 
-with open('data') as input_data:
+with open('testData2') as input_data:
     instructions = input_data.readlines()
 
-memory = [0] * pow(2,36) #65536
+memory = {}#[0] * 65536
 for instruction in instructions:
     if instruction[:4] == 'mask':
         mask = instruction[7:]
@@ -38,5 +38,5 @@ for instruction in instructions:
         for addr in runMask(int(instruction[4:stop]), mask):
             memory[addr] = int(instruction[stop+4:])
 
-#print(memory[0:12])
+#print(memory[0:30])
 print("The sum of all memory values is", sum(memory))
