@@ -1,4 +1,4 @@
-turns = 30000000
+turns = 2020#30000000
 prev_idx = [0] * turns # holds the index of the last time the number was said
 prev_prev_idx = [0] * turns # holds the index of the time before that
 with open('testData1') as input_data:
